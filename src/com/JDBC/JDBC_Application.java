@@ -29,6 +29,7 @@ public class JDBC_Application {
 				System.out.println("3.Delete");
 				System.out.println("4.Select");
 				System.out.println("5.Search Record");
+				System.out.println("6.CallableStatement");
 				int input = scnScanner.nextInt();
 				switch (input) {
 				case 1: {
@@ -64,6 +65,10 @@ public class JDBC_Application {
 					default:
 						System.out.println("------Invalid Selection---------");
 					}
+				}
+				case 6:{
+					DQLOperations.callableStatemetExp(connection);
+					break;
 				}
 				default:
 					System.out.println("Invalid Selection..!");

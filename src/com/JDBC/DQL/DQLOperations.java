@@ -1,5 +1,6 @@
 package com.JDBC.DQL;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -65,6 +66,18 @@ public class DQLOperations {
 		}
 		System.out.println("-----------------------------------------------");
 		prepareStatement.close();
+	}
+	
+	public static void callableStatemetExp(Connection connection) throws SQLException {
+		System.out.println("Enter ID to Update Record");
+		int id = scn.nextInt();
+		System.out.println("Enter name to update the FirstName");
+		String name = scn.next();
+		CallableStatement callableStatement = connection.prepareCall("{call result(?,?)}");
+		callableStatement.setString(1, name);
+		callableStatement.setInt(2, id);
+		callableStatement.execute();
+		System.out.println("1 Row got Update");
 	}
 		
 }
