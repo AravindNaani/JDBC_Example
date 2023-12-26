@@ -33,6 +33,17 @@ public class JDBC_Application {
 				DMLOperations.insertRecord(statement);
 				break;
 			}
+			case 2: {
+				DMLOperations.updateRecord(statement);
+				break;
+			}
+			case 3: {
+				
+			}
+			case 4: {
+				DMLOperations.selectRecords(statement);
+				break;
+			}
 			default:
 				System.out.println("Invalid Selection..!");
 				Count++;
