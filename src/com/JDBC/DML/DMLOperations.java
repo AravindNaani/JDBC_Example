@@ -19,18 +19,6 @@ public class DMLOperations {
 		System.out.println(rows + " rows  got inserted");
 	}
 
-	public static void selectRecords(Statement statement) throws SQLException {
-
-		String quaryString = "select * from employee";
-		System.out.println(quaryString);
-		ResultSet resultSet = statement.executeQuery(quaryString);
-		System.out.println("-----------------------------------------------");
-		while (resultSet.next()) {
-			System.out.println(resultSet.getString(1) + "\t" + resultSet.getString(2) + "\t" + resultSet.getString(3));
-		}
-		System.out.println("------------------------------------------------");
-	}
-
 	public static void updateRecord(Statement statement) throws SQLException {
 
 		System.out.println("Please Enter ID to Update Record");

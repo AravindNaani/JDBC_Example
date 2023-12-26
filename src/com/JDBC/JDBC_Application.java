@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 import com.JDBC.Constants.Constants;
 import com.JDBC.DML.DMLOperations;
+import com.JDBC.DQL.DQLOperations;
 
 public class JDBC_Application {
 
@@ -27,6 +28,7 @@ public class JDBC_Application {
 				System.out.println("2.Update");
 				System.out.println("3.Delete");
 				System.out.println("4.Select");
+				System.out.println("5.Search Record");
 				int input = scnScanner.nextInt();
 				switch (input) {
 				case 1: {
@@ -42,8 +44,26 @@ public class JDBC_Application {
 					break;
 				}
 				case 4: {
-					DMLOperations.selectRecords(statement);
+					DQLOperations.selectRecords(statement);
 					break;
+				}
+				case 5:{
+					System.out.println("Select from following Operations to Search Record");
+					System.out.println("1.Search Record By ID");
+					System.out.println("2.Search Record By First 3 characters in first name");
+					int input1=scnScanner.nextInt();
+					switch(input1) {
+					case 1:{
+						DQLOperations.searchSpecificRecordbyID(connection);
+						break;
+					}
+					case 2:{
+						DQLOperations.SearchByCharactersInName(connection);
+						break;
+					}
+					default:
+						System.out.println("------Invalid Selection---------");
+					}
 				}
 				default:
 					System.out.println("Invalid Selection..!");
