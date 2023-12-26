@@ -77,6 +77,14 @@ public class DMLOperations {
 		}
 		
 	}
+	
+	public static void deleteRecord(Statement statement) throws SQLException {
+		System.out.println("Enter Id to delete a record");
+		int id = scn.nextInt();
+		String quaryString = "delete from employee where id="+id;
+		int rows = statement.executeUpdate(quaryString);
+		System.out.println(rows+" got deleted");
+	}
 
 	private static void runtimeData() {
 		System.out.println("Please enter id");

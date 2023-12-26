@@ -38,7 +38,8 @@ public class JDBC_Application {
 				break;
 			}
 			case 3: {
-				
+				DMLOperations.deleteRecord(statement);
+				break;
 			}
 			case 4: {
 				DMLOperations.selectRecords(statement);
